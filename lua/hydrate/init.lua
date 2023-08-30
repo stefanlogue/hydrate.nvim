@@ -3,6 +3,7 @@ local M = {}
 function M.setup(options)
 	options = options or {}
 	options.minute_interval = (options.minute_interval or 20) * 60 * 1000
+	options.render_style = options.render_style or "simple"
 
 	local timer = vim.loop.new_timer()
 	local enabled = true
@@ -15,7 +16,7 @@ function M.setup(options)
 	local function on_timer()
 		vim.notify(" 💧 Time for a drink ", vim.log.levels.WARN, {
 			title = "hydrate.nvim",
-			render = "compact",
+			render = options.render_style,
 			timeout = false,
 			on_open = function()
 				timer:stop()
