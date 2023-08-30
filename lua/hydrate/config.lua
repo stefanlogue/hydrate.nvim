@@ -12,7 +12,7 @@ config.Opts = {}
 config.Opts.default = function()
 	return {
 		minute_interval = 20,
-		render_style = "simple",
+		render_style = "compact",
 	}
 end
 

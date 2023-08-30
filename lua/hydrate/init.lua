@@ -6,7 +6,7 @@ local M = {}
 ---
 ---@param options hydrate.config.Opts
 function M.setup(options)
-	options = options or config.Opts.default()
+	options = vim.tbl_extend("force", config.Opts.default(), options or {})
 	options.minute_interval = options.minute_interval * 60 * 1000
 
 	local timer = vim.loop.new_timer()
@@ -15,6 +15,14 @@ function M.setup(options)
 	local has_notify, notify = pcall(require, "notify")
 	if has_notify then
 		vim.notify = notify
+	end
+
+	local function info(message)
+		vim.notify(message, vim.log.levels.INFO, {
+			title = "hydrate.nvim",
+			render = options.render_style,
+			timeout = 2000,
+		})
 	end
 
 	local function on_timer()
@@ -33,7 +41,7 @@ function M.setup(options)
 
 	local function print_minutes_until()
 		local minutes_remaining = math.ceil(timer:get_due_in() / 60 / 1000)
-		vim.print(
+		info(
 			string.format(
 				"Drink due in " .. minutes_remaining .. " %s",
 				minutes_remaining == 1 and "minute" or "minutes"
@@ -52,6 +60,7 @@ function M.setup(options)
 
 		timer:stop()
 		timer:again()
+		info(" 💧 You've had a drink, timer reset 💧 ")
 	end, { desc = "Tell us you've had a drink, so we can reset the timer" })
 
 	vim.api.nvim_create_user_command("HydrateInterval", function(opts)
@@ -64,11 +73,11 @@ function M.setup(options)
 
 	vim.api.nvim_create_user_command("HydrateDisable", function()
 		if not enabled then
-			vim.print("Hydrate is already disabled")
+			info("Hydrate is already disabled")
 			return
 		end
 		timer:stop()
-		vim.print("Hydrate is disabled")
+		info("Hydrate is disabled")
 		enabled = false
 		if has_notify then
 			require("notify").dismiss()
@@ -77,11 +86,11 @@ function M.setup(options)
 
 	vim.api.nvim_create_user_command("HydrateEnable", function()
 		if enabled then
-			vim.print("Hydrate is already enabled")
+			info("Hydrate is already enabled")
 			return
 		end
 		timer:again()
-		vim.print("Hydrate is enabled")
+		info("Hydrate is enabled")
 		enabled = true
 	end, { desc = "Enable hydration reminders" })
 end
