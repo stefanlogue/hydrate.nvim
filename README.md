@@ -22,7 +22,8 @@
 {
   "stefanlogue/hydrate.nvim",
   opts = {
-    minute_interval = 20
+    minute_interval = 20,
+    render_style = "simple"
   }
 }
 ```
