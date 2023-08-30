@@ -68,7 +68,7 @@ function M.setup(options)
 		if has_notify then
 			require("notify").dismiss()
 		end
-	end, { desc = "Disable Hydrate" })
+	end, { desc = "Disable hydration reminders" })
 
 	vim.api.nvim_create_user_command("HydrateEnable", function()
 		if enabled then
@@ -78,7 +78,7 @@ function M.setup(options)
 		timer:again()
 		vim.print("Hydrate is enabled")
 		enabled = true
-	end, { desc = "Enable Hydrate" })
+	end, { desc = "Enable hydration reminders" })
 end
 
 return M
