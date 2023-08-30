@@ -33,3 +33,6 @@
 - `DrinkInterval` - Set the interval between drinks in minutes
 - `HydrateDisable` - Disable hydration reminders
 - `HydrateEnable` - Enable hydration reminders
+
+## Acknowledgements
+[stand.nvim](https://github.com/mvllow/stand.nvim) for the general idea
