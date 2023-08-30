@@ -1,9 +1,13 @@
+local config = require("hydrate.config")
+
 local M = {}
 
+---Setup the plugin
+---
+---@param options hydrate.config.Opts
 function M.setup(options)
-	options = options or {}
-	options.minute_interval = (options.minute_interval or 20) * 60 * 1000
-	options.render_style = options.render_style or "simple"
+	options = options or config.Opts.default()
+	options.minute_interval = options.minute_interval * 60 * 1000
 
 	local timer = vim.loop.new_timer()
 	local enabled = true
