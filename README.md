@@ -10,6 +10,7 @@
 - [Installation](#installation)
   - [Optional Requirements](#requirements)
   - [lazy.nvim](#lazy)
+- [Config](#config)
 - [Commands](#commands)
 
 ## Installation<a name="installation"></a>
@@ -22,8 +23,21 @@
 {
   "stefanlogue/hydrate.nvim",
   opts = {
-    minute_interval = 20
+    -- See below for config options
   }
+}
+```
+
+## Config<a name="config"></a>
+This is a list of the options that can be passed to `require("hydrate").setup()` with their default values:
+```lua
+{
+  -- The interval between notifications in minutes
+  minute_interval = 20,
+
+  -- The render style for notifications
+  -- Accepted values are "default", "minimal", "simple" or "compact"
+  render_style = "compact"
 }
 ```
 
