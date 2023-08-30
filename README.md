@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 💧 hydrate.nvim</h1>
+  <h1> 💧 hydrate.nvim 💧 </h1>
   <h5>Reminders to keep hydrated while you code</h5>
   <h6>'Water is the only drink for a wise man' - Henry David Thoreau</h6>
 
