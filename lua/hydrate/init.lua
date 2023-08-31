@@ -11,6 +11,7 @@ function M.setup(options)
 
 	local timer = vim.loop.new_timer()
 	local enabled = true
+	local title = "hydrate"
 
 	local has_notify, notify = pcall(require, "notify")
 	if has_notify then
@@ -19,7 +20,15 @@ function M.setup(options)
 
 	local function info(message)
 		vim.notify(message, vim.log.levels.INFO, {
-			title = "hydrate.nvim",
+			title = title,
+			render = options.render_style,
+			timeout = 2000,
+		})
+	end
+
+	local function error(message)
+		vim.notify(message, vim.log.levels.ERROR, {
+			title = title,
 			render = options.render_style,
 			timeout = 2000,
 		})
@@ -27,7 +36,7 @@ function M.setup(options)
 
 	local function on_timer()
 		vim.notify(" 💧 Time for a drink ", vim.log.levels.WARN, {
-			title = "hydrate.nvim",
+			title = title,
 			render = options.render_style,
 			timeout = false,
 			on_open = function()
@@ -73,7 +82,7 @@ function M.setup(options)
 
 	vim.api.nvim_create_user_command("HydrateDisable", function()
 		if not enabled then
-			info("Hydrate is already disabled")
+			error("Hydrate is already disabled")
 			return
 		end
 		timer:stop()
@@ -86,7 +95,7 @@ function M.setup(options)
 
 	vim.api.nvim_create_user_command("HydrateEnable", function()
 		if enabled then
-			info("Hydrate is already enabled")
+			error("Hydrate is already enabled")
 			return
 		end
 		timer:again()
