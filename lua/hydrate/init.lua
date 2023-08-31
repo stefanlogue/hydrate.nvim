@@ -11,7 +11,7 @@ function M.setup(options)
 
 	local timer = vim.loop.new_timer()
 	local enabled = true
-	local title = "hydrate"
+	local title = "hydrate "
 
 	local has_notify, notify = pcall(require, "notify")
 	if has_notify then
