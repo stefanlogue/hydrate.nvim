@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [v0.4.3](https://github.com/stefanlogue/hydrate.nvim/releases/tag/v0.4.3) - 2023-09-01
+
 ## [v0.4.2](https://github.com/stefanlogue/hydrate.nvim/releases/tag/v0.4.2) - 2023-09-01
 
 ## [v0.4.1](https://github.com/stefanlogue/hydrate.nvim/releases/tag/v0.4.1) - 2023-09-01
