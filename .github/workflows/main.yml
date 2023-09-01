@@ -80,7 +80,6 @@ jobs:
             mkdir -p _neovim
             curl -sL ${{ matrix.nvim_url }} | tar xzf - --strip-components=1 -C "${PWD}/_neovim"
           }
-          git clone --depth 1 ${{ env.plenary-git }} ${{ env.plenary-path }}
           ln -s $(pwd) ${{ env.runtime }}
 
       - name: Prepare
