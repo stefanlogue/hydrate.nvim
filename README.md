@@ -6,6 +6,8 @@
   [![Lua](https://img.shields.io/badge/Lua-blue.svg?style=for-the-badge&logo=lua)](http://www.lua.org)
 </div>
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/stefanlogu4)
+
 ## Table of contents
 - [Installation](#installation)
   - [Optional Requirements](#requirements)
