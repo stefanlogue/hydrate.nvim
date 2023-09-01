@@ -19,6 +19,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
       - name: panvimdoc
         uses: kdheepak/panvimdoc@v3.0.6
         with:
