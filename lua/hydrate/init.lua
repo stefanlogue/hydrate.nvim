@@ -9,6 +9,9 @@ function M.setup(options)
 	options = vim.tbl_extend("force", config.Opts.default(), options or {})
 	options.minute_interval = options.minute_interval * 60 * 1000
 
+	local timer_file_path = vim.fn.stdpath("data") .. "/hydrate.json"
+	local open = io.open
+
 	local timer = vim.loop.new_timer()
 	local enabled = true
 	local title = "hydrate "
@@ -20,6 +23,14 @@ function M.setup(options)
 
 	local function info(message)
 		vim.notify(message, vim.log.levels.INFO, {
+			title = title,
+			render = options.render_style,
+			timeout = 2000,
+		})
+	end
+
+	local function warn(message)
+		vim.notify(message, vim.log.levels.WARN, {
 			title = title,
 			render = options.render_style,
 			timeout = 2000,
@@ -58,7 +69,45 @@ function M.setup(options)
 		)
 	end
 
-	timer:start(options.minute_interval, options.minute_interval, vim.schedule_wrap(on_timer))
+	local function load_persisted_time()
+		local file = open(timer_file_path, "r")
+		if not file then
+			file = open(timer_file_path, "w")
+			if not file then
+				error("Error opening file")
+				warn(timer_file_path)
+				return
+			end
+			file:write('{"last":' .. os.time() .. "}")
+			timer:start(options.minute_interval, options.minute_interval, vim.schedule_wrap(on_timer))
+			return
+		else
+			local latest = file:read("*a")
+			latest = vim.fn.json_decode(latest)
+			if not latest then
+				error("Could not parse timer")
+				return
+			end
+			local diff_ms = os.difftime(os.time(), latest.last) * 1000
+			if diff_ms > options.minute_interval then
+				timer:start(0, options.minute_interval, vim.schedule_wrap(on_timer))
+			else
+				timer:start(options.minute_interval - diff_ms, options.minute_interval, vim.schedule_wrap(on_timer))
+			end
+		end
+	end
+
+	if options.persist_timer then
+		load_persisted_time()
+	else
+		timer:start(options.minute_interval, options.minute_interval, vim.schedule_wrap(on_timer))
+		local file = open(timer_file_path, "w+")
+		if not file then
+			return
+		else
+			file:write('{"last":' .. os.time() .. "}")
+		end
+	end
 
 	vim.api.nvim_create_user_command("HydrateWhen", print_minutes_until, { desc = "Prints minutes until next drink" })
 
@@ -69,6 +118,12 @@ function M.setup(options)
 
 		timer:stop()
 		timer:again()
+		local file = open(timer_file_path, "w+")
+		if not file then
+			error("Could not store time")
+			return
+		end
+		file:write('{"last":' .. os.time() .. "}")
 		info(" 💧 You've had a drink, timer reset 💧 ")
 	end, { desc = "Tell us you've had a drink, so we can reset the timer" })
 
