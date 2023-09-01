@@ -1,3 +1,4 @@
+
 local config = require "hydrate.config"
 
 local hydrate = {}
@@ -8,6 +9,7 @@ hydrate.VERSION = "0.4.0"
 ---
 ---@param options hydrate.config.Opts
 function hydrate.setup(options)
+
   options = vim.tbl_extend("force", config.Opts.default(), options or {})
   options.minute_interval = options.minute_interval * 60 * 1000
 
