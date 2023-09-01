@@ -11,11 +11,11 @@ config.Opts = {}
 ---Get defaults
 ---@return hydrate.config.Opts
 config.Opts.default = function()
-	return {
-		minute_interval = 20,
-		render_style = "compact",
-		persist_timer = false,
-	}
+  return {
+    minute_interval = 20,
+    render_style = "compact",
+    persist_timer = false,
+  }
 end
 
 return config
