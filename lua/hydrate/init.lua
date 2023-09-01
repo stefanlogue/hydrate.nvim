@@ -1,11 +1,13 @@
 local config = require("hydrate.config")
 
-local M = {}
+local hydrate = {}
+
+hydrate.VERSION = "0.4.0"
 
 ---Setup the plugin
 ---
 ---@param options hydrate.config.Opts
-function M.setup(options)
+function hydrate.setup(options)
 	options = vim.tbl_extend("force", config.Opts.default(), options or {})
 	options.minute_interval = options.minute_interval * 60 * 1000
 
@@ -159,4 +161,4 @@ function M.setup(options)
 	end, { desc = "Enable hydration reminders" })
 end
 
-return M
+return hydrate
