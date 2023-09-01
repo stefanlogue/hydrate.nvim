@@ -2,7 +2,7 @@ local config = require "hydrate.config"
 
 local hydrate = {}
 
-hydrate.VERSION = "0.4.1"
+hydrate.VERSION = "0.4.2"
 
 ---Setup the plugin
 ---
