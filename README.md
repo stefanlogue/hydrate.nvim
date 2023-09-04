@@ -4,9 +4,9 @@
   <h6>'Water is the only drink for a wise man' - Henry David Thoreau</h6>
 
   [![Lua](https://img.shields.io/badge/Lua-blue.svg?style=for-the-badge&logo=lua)](http://www.lua.org)
+  [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/stefanlogu4)
 </div>
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/stefanlogu4)
 
 ## Table of contents
 - [Installation](#installation)
