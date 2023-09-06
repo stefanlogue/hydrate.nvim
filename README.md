@@ -1,6 +1,6 @@
 <div align="center">
-  <img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/stefanlogue/hydrate.nvim/main.yml?label=CI&style=for-the-badge">
-  <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/stefanlogue/hydrate.nvim?style=for-the-badge">
+  <img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/stefanlogue/hydrate.nvim/main.yml?label=CI&style=for-the-badge&logo=githubactions&logoColor=white">
+  <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/stefanlogue/hydrate.nvim?style=for-the-badge&logo=neovim&color=#44CC11">
 
   <h1> 💧 hydrate.nvim 💧 </h1>
   <h5>Reminders to keep hydrated while you code</h5>
