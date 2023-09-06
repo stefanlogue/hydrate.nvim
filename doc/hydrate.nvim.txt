@@ -8,6 +8,7 @@
     - |hydrate.nvim-lazy.nvim|
 - |hydrate.nvim-config|
 - |hydrate.nvim-commands|
+- |hydrate.nvim-contributing|
 
 
 ==============================================================================
@@ -68,7 +69,15 @@ This is a list of the options that can be passed to
 
 
 ==============================================================================
-5. Acknowledgements                            *hydrate.nvim-acknowledgements*
+5. Contributing                                    *hydrate.nvim-contributing*
+
+Please read the CONTRIBUTING
+<https://github.com/stefanlogue/hydrate.nvim/blob/main/.github/CONTRIBUTING.md>
+guide before submitting a pull request.
+
+
+==============================================================================
+6. Acknowledgements                            *hydrate.nvim-acknowledgements*
 
 stand.nvim <https://github.com/mvllow/stand.nvim> for the general idea
 
