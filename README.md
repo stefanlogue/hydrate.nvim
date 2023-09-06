@@ -1,4 +1,7 @@
 <div align="center">
+  <img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/stefanlogue/hydrate.nvim/main.yml?label=CI&style=for-the-badge">
+  <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/stefanlogue/hydrate.nvim?style=for-the-badge">
+
   <h1> 💧 hydrate.nvim 💧 </h1>
   <h5>Reminders to keep hydrated while you code</h5>
   <h6>'Water is the only drink for a wise man' - Henry David Thoreau</h6>
@@ -14,6 +17,7 @@
   - [lazy.nvim](#lazy)
 - [Config](#config)
 - [Commands](#commands)
+- [Contributing](#contributing)
 
 ## Installation<a name="installation"></a>
 
@@ -57,6 +61,9 @@ This is a list of the options that can be passed to `require("hydrate").setup()`
 - `DrinkInterval` - Set the interval between drinks in minutes
 - `HydrateDisable` - Disable hydration reminders
 - `HydrateEnable` - Enable hydration reminders
+
+## Contributing<a name="contributing"></a>
+Please read the [CONTRIBUTING](https://github.com/stefanlogue/hydrate.nvim/blob/main/.github/CONTRIBUTING.md) guide before submitting a pull request.
 
 ## Acknowledgements
 [stand.nvim](https://github.com/mvllow/stand.nvim) for the general idea
