@@ -1,4 +1,4 @@
-*hydrate.nvim.txt*                   reminders to keep hydrated while you code
+*hydrate.nvim.txt* Neovim plugin to remind you to keep hydrated while you code
 
 ==============================================================================
 1. Table of contents                          *hydrate.nvim-table-of-contents*
