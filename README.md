@@ -3,7 +3,7 @@
   <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/stefanlogue/hydrate.nvim?style=for-the-badge&logo=neovim&color=#44CC11">
 
   <h1> 💧 hydrate.nvim 💧 </h1>
-  <h5>Reminders to keep hydrated while you code</h5>
+  <h5>Neovim plugin to remind you to keep hydrated while you code</h5>
   <h6>'Water is the only drink for a wise man' - Henry David Thoreau</h6>
 
   [![Lua](https://img.shields.io/badge/Lua-blue.svg?style=for-the-badge&logo=lua)](http://www.lua.org)
