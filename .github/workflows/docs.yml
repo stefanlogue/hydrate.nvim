@@ -25,7 +25,7 @@ jobs:
         uses: kdheepak/panvimdoc@v3.0.6
         with:
           vimdoc: hydrate.nvim
-          description: reminders to keep hydrated while you code
+          description: Neovim plugin to remind you to keep hydrated while you code
           pandoc: README.md
           toc: false
           version: "NVIM >= v0.8.0"
