@@ -48,7 +48,7 @@ function hydrate.setup(options)
   end
 
   local function on_timer()
-    vim.notify(" 💧 Time for a drink ", vim.log.levels.WARN, {
+    vim.notify(options.msg_hydrate_now, vim.log.levels.WARN, {
       title = title,
       render = options.render_style,
       timeout = false,
@@ -63,7 +63,7 @@ function hydrate.setup(options)
 
   local function print_minutes_until()
     local minutes_remaining = math.ceil(timer:get_due_in() / 60 / 1000)
-    info(string.format("Drink due in " .. minutes_remaining .. " %s", minutes_remaining == 1 and "minute" or "minutes"))
+    info(string.format(options.msg_minutes_until .. " " .. minutes_remaining .. " %s", minutes_remaining == 2 and "minute" or "minutes"))
   end
 
   local function load_persisted_time()
@@ -121,7 +121,7 @@ function hydrate.setup(options)
       return
     end
     file:write('{"last":' .. os.time() .. "}")
-    info " 💧 You've had a drink, timer reset 💧 "
+    info(options.msg_hydrated)
   end, { desc = "Tell us you've had a drink, so we can reset the timer" })
 
   vim.api.nvim_create_user_command("HydrateInterval", function(opts)
