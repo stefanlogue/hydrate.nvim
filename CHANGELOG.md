@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [v0.4.7](https://github.com/stefanlogue/hydrate.nvim/releases/tag/v0.4.7) - 2023-10-24
+
 ## [v0.4.6](https://github.com/stefanlogue/hydrate.nvim/releases/tag/v0.4.6) - 2023-09-01
 ### Changed
 - force push in docs action
