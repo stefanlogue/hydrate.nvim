@@ -19,7 +19,7 @@ config.Opts.default = function()
     persist_timer = false,
     msg_hydrate_now = " 💧 Time for a drink ",
     msg_hydrated = " 💧 You've had a drink, timer reset 💧",
-    msg_minutes_until = "Drink due in"
+    msg_minutes_until = "Drink due in",
   }
 end
 
