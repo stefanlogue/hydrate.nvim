@@ -2,7 +2,7 @@ local config = require "hydrate.config"
 
 local hydrate = {}
 
-hydrate.VERSION = "0.4.7"
+hydrate.VERSION = "0.5.0"
 
 ---Setup the plugin
 ---
@@ -63,7 +63,12 @@ function hydrate.setup(options)
 
   local function print_minutes_until()
     local minutes_remaining = math.ceil(timer:get_due_in() / 60 / 1000)
-    info(string.format(options.msg_minutes_until .. " " .. minutes_remaining .. " %s", minutes_remaining == 2 and "minute" or "minutes"))
+    info(
+      string.format(
+        options.msg_minutes_until .. " " .. minutes_remaining .. " %s",
+        minutes_remaining == 2 and "minute" or "minutes"
+      )
+    )
   end
 
   local function load_persisted_time()
