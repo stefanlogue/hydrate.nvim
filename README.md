@@ -59,7 +59,11 @@ This is a list of the options that can be passed to `require("hydrate").setup()`
 
   -- Sets the message after acknowledging the reminder to the 
   -- specified message
-  msg_hydrated = " 💧 You've had a drink, timer reset 💧"
+  msg_hydrated = " 💧 You've had a drink, timer reset 💧",
+
+  -- Sets text displayed before time in minutes for
+  -- ":HydrateWhen" message
+  msg_minutes_until = "Drink due in",
 }
 ```
 
